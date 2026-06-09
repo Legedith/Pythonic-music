@@ -1,0 +1,17 @@
+[project]
+name = "pythonic-music-songgen"
+version = "0.1.0"
+description = "Seeded Python instrumental song generator with EDM style presets."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0.0"]
+
+[project.scripts]
+songgen = "pythonic_music_songgen.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.0.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
