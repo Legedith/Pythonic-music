@@ -1,0 +1,7 @@
+.venv
+__pycache__
+.pytest_cache
+chord-results
+*.wav
+*.mp3
+*.m4a
