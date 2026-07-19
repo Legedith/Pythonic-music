@@ -4,6 +4,19 @@ Pythonic Music is a seeded instrumental song generator. It creates original MIDI
 
 The project is managed with `uv`.
 
+## Chord finder
+
+A separate local-first chord estimator lives in [`chord_finder/`](chord_finder/README.md). It accepts a YouTube URL or uploaded audio, estimates timed chord changes, suggests guitar or ukulele capo shapes, and exports text, CSV, and JSON charts.
+
+```bash
+cd chord_finder
+uv sync --extra dev
+uv run pytest
+uv run chord-finder-web
+```
+
+Automatic chord recognition is approximate; the file-upload path is the most reliable input.
+
 ## Styles
 
 - `songwriter`: layered instrumental writing with intro, build, groove, breakdown, and final return.

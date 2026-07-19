@@ -1,0 +1,33 @@
+[project]
+name = "folk-chord-finder"
+version = "0.1.0"
+description = "Local-first chord estimation from a YouTube URL or an uploaded song."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Jatin Dehmiwal" }]
+dependencies = [
+  "gradio>=6.5,<7",
+  "librosa>=0.11,<0.12",
+  "numpy>=2,<3",
+  "soundfile>=0.13,<0.15",
+  "yt-dlp[default]>=2026.7.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+chord-finder = "folk_chord_finder.cli:main"
+chord-finder-web = "folk_chord_finder.web:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/folk_chord_finder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
